@@ -6,6 +6,7 @@ const fetcher = async () => {
     const data = await res.json()
     return data
 }
+ 
 
 function DashboardSWR() {
     const { data, error } = useSWR('dashboard', fetcher)
