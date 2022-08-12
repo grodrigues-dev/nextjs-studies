@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 function CommentsPage() {
     
@@ -40,20 +41,24 @@ function CommentsPage() {
     }, [])
     
     return (
-        <>
-            <input type='text' value={comment} onChange={(e) => setComment(e.target.value)}></input>
-            <button onClick={submitComment}>Send Comment</button>
+        <div style={{padding: '10px'}}>
+            <div style={{height: '30px'}}>
+                <input type='text' value={comment} onChange={(e) => setComment(e.target.value)} style={{height: '100%', borderRadius: '5px'}}></input>
+                <button onClick={submitComment} style={{height: '100%', marginLeft: '10px', border: 'none', background: '#292529', borderRadius: '5px', color: '#FFF'}}>Send Comment</button>
+            </div>
             {
                 comments.map(comment => {
                     return (
                         <div key={comment.id} style={{display: "flex"}}>
                             <p>{comment.id} {comment.text}</p>
-                            <button onClick={()=> deleteComent(comment.id)}>delete</button>
+                            <div onClick={()=> deleteComent(comment.id)} style={{display: 'flex', alignItems: 'center', marginLeft: '5px',cursor: 'pointer'}}>
+                                <Image src="/trash.svg" width="20" height="20" />
+                            </div>
                         </div>
                     )
                 })
             }
-        </>
+        </div>
     )
 }
 
