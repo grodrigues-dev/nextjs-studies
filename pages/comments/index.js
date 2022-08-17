@@ -33,7 +33,6 @@ function CommentsPage() {
             method: 'DELETE'
         })
         const data = response.json()
-        console.log(data);
         loadComments()
     } 
 

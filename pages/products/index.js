@@ -19,7 +19,6 @@ function ProductList({ products }) {
 }
 
 export async function getStaticProps() {
-    console.log('Generating / regenarating Product List')
     const res = await fetch('http://localhost:4000/products');
     const data = await res.json();
 

@@ -22,7 +22,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const { params } = context
-    console.log(params)
     const res = await fetch(`http://localhost:3000/api/comments/${params.commentId}`)
     const data = await res.json();
     if(!data.id) {
