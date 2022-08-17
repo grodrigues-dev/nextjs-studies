@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import Link from "next/link";
 
 function CommentsPage() {
     
@@ -49,8 +50,13 @@ function CommentsPage() {
             {
                 comments.map(comment => {
                     return (
-                        <div key={comment.id} style={{display: "flex"}}>
-                            <p>{comment.id} {comment.text}</p>
+                        <div key={comment.id} style={{display: "flex", alignItems: 'center'}}>
+                            <p style={{marginRight: '5px'}}>{comment.id} {comment.text}</p>
+                            <div style={{cursor: 'pointer', paddingTop: '5px'}}>
+                                <Link href={`comments/${comment.id}`}>
+                                    <Image src="/eye.svg" width="20" height="20"/>
+                                </Link>
+                            </div>
                             <div onClick={()=> deleteComent(comment.id)} style={{display: 'flex', alignItems: 'center', marginLeft: '5px',cursor: 'pointer'}}>
                                 <Image src="/trash.svg" width="20" height="20" />
                             </div>
