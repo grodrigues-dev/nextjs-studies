@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import styles from '../../styles/Posts.module.css'
+
 function PostList({ posts }) {
     return (
         <>
-            <h1>List of Posts</h1>
+            <h1 className={styles.highlight}>List of Posts</h1>
             {
                 posts.map((post) => {
                     return (

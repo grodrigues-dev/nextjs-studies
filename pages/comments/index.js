@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link";
 
+import styles from '../../styles/Comments.module.css'
+
 function CommentsPage() {
     
     const [comments, setComments] = useState([])
@@ -42,7 +44,7 @@ function CommentsPage() {
     
     return (
         <div style={{padding: '10px'}}>
-            <h2>List of Comments</h2>
+            <h2 className={styles.highlight}>List of Comments</h2>
             <div className="d-flex" style={{height: '35px', marginBottom: '25px'}}>
                 <input type='text' value={comment} onChange={(e) => setComment(e.target.value)} style={{height: '100%', borderRadius: '5px'}}></input>
                 <button onClick={submitComment} className='btn btn-primary' style={{ marginLeft: '10px'}}>Send Comment</button>
