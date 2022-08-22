@@ -42,16 +42,17 @@ function CommentsPage() {
     
     return (
         <div style={{padding: '10px'}}>
-            <div style={{height: '30px'}}>
+            <h2>List of Comments</h2>
+            <div className="d-flex" style={{height: '35px', marginBottom: '25px'}}>
                 <input type='text' value={comment} onChange={(e) => setComment(e.target.value)} style={{height: '100%', borderRadius: '5px'}}></input>
-                <button onClick={submitComment} style={{height: '100%', marginLeft: '10px', border: 'none', background: '#292529', borderRadius: '5px', color: '#FFF'}}>Send Comment</button>
+                <button onClick={submitComment} className='btn btn-primary' style={{ marginLeft: '10px'}}>Send Comment</button>
             </div>
             {
                 comments.map(comment => {
                     return (
-                        <div key={comment.id} style={{display: "flex", alignItems: 'center'}}>
+                        <div key={comment.id} className='d-flex align-items-center'>
                             <p style={{marginRight: '5px'}}>{comment.id} {comment.text}</p>
-                            <div style={{cursor: 'pointer', paddingTop: '5px'}}>
+                            <div className="ms-2" style={{cursor: 'pointer', paddingTop: '5px'}}>
                                 <Link href={`comments/${comment.id}`}>
                                     <Image src="/eye.svg" width="20" height="20"/>
                                 </Link>

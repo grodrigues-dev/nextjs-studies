@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+h2 {
+  color: orange;
+}
+
+p {
+  margin: 0 !important;
+}
