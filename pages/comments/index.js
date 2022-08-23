@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link";
 
-import styles from '../../styles/Comments.module.css'
+import styles from '../../styles/Comments.module.scss'
 
 function CommentsPage() {
     

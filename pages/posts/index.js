@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import styles from '../../styles/Posts.module.css'
+import styles from '../../styles/Posts.module.scss'
 
 function PostList({ posts }) {
     return (
