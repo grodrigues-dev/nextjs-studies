@@ -1,9 +1,16 @@
 import User from "../components/user"
+import styled from "styled-components";
+
+
+const Title = styled.h1`
+    font-size: 40px;
+    color: ${({theme})=> theme.colors.primary};
+`
 
 function UserList({ users }) {
     return (
         <>
-        <h1>List of users</h1>
+        <Title>List of users</Title>
             {
                 users.map(user => {
                     return (
