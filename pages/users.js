@@ -1,6 +1,6 @@
 import User from "../components/user"
 import styled from "styled-components";
-
+import Head from 'next/head'
 
 const Title = styled.h1`
     font-size: 40px;
@@ -10,6 +10,10 @@ const Title = styled.h1`
 function UserList({ users }) {
     return (
         <>
+        <Head>
+            <title>Working with head tag</title>
+            <meta name="description" content="demo app component"></meta>
+        </Head>
         <Title>List of users</Title>
             {
                 users.map(user => {

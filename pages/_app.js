@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeProvider } from 'styled-components'
 import Header from '../components/header'
 import Footer from '../components/Footer'
+import Head from 'next/head'
 
 const theme = {
   colors: {
@@ -23,9 +24,13 @@ function MyApp({ Component, pageProps }) {
   
   return (
   <ThemeProvider theme={theme}>
-    <Header />
+    <Head>
+      <title>Jorginho's app</title>
+      <meta name="description" content="demo app made by Jorginho"></meta>
+    </Head>
+    {/* <Header /> */}
       <Component {...pageProps} />
-    <Footer />
+    {/* <Footer /> */}
   </ThemeProvider>
   )
 }
