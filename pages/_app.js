@@ -1,9 +1,9 @@
-import '../styles/globals.css'
-import '../styles/layout.scss'
+import 'styles/globals.css'
+import 'styles/layout.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeProvider } from 'styled-components'
-import Header from '../components/header'
-import Footer from '../components/Footer'
+import Header from '@/layout/Header'
+import Footer from '@/layout/Footer'
 import Head from 'next/head'
 
 const theme = {

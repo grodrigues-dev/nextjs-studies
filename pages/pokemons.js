@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 function Pokemons() {
 
     const pokemons = ['charmander', 'bulbasaur', 'squirtle']
@@ -9,7 +11,7 @@ function Pokemons() {
                 pokemons.map(pokemon => {
                     return (
                         <div key={pokemon}>
-                            <img  src={`/${pokemon}.png`} alt={pokemon} width='200' height='200'/>
+                            <Image  src={`/${pokemon}.png`} alt={pokemon} width='200' height='200'/>
                         </div>
                     )
                 })
