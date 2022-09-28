@@ -1,22 +1,33 @@
-import Link from "next/link";
-
+import { signIn, signOut } from "next-auth/react";
 import styles from '../styles/Home.module.scss'
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.login}>
-        <h1>Next Auth</h1>
-        <div>
-          <label>Username</label>
-          <input />
-        </div>
-        <div>
-          <label>Password</label>
-          <input />
-        </div>
-        <button>Sign in</button>
+        <section className={styles.signout}>
+          <span onClick={() => {
+            signOut()
+          }}>
+            <Image  src={`/logout.png`} width='30' height='30'/>
+          </span>
+        </section>
+        <section className={styles.form}>
+          <h1>Next Auth</h1>
+          <div>
+            <label>Username</label>
+            <input />
+          </div>
+          <div>
+            <label>Password</label>
+            <input />
+          </div>
+          <button onClick={()=> {
+            signIn()
+          }}>Sign in</button>
+        </section>
       </div>
-    </section>
+    </div>
   )
 }

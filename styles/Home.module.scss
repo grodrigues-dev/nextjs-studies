@@ -11,10 +11,14 @@
     height: 25rem;
     width: 25rem;
     border-radius: 5px;
+}
+
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
 
     input {
         border-radius: 5px;
@@ -41,4 +45,12 @@
         border-radius: 5px;
         padding: 8px;
     }
+
+}
+
+.signout {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    cursor: pointer;
 }
