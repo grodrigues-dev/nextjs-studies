@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login {
+    border: 1px solid black;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        border-radius: 5px;
+        width: 15rem;
+    }
+    
+    label {
+        width: 5rem;
+    }
+
+    div {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    button {
+        margin-top: 2rem;
+        width: 8rem;
+        background-color: #0fba45;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        padding: 8px;
+    }
+}
