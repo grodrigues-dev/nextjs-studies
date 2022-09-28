@@ -1,8 +1,9 @@
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import styles from '../styles/Home.module.scss'
 import Image from "next/image"
 
 export default function Home() {
+  const { data: session, status} = useSession();
   return (
     <div className={styles.container}>
       <div className={styles.login}>
@@ -26,6 +27,14 @@ export default function Home() {
           <button onClick={()=> {
             signIn()
           }}>Sign in</button>
+          <div className={!session && status === 'loading' ? styles.loading : status.loaded}>
+            {
+            !session && status!='authenticated' && <p>*You are not authenticated</p>
+            }
+            {
+              session && <p>Welcome user :)</p>
+            }
+          </div>
         </section>
       </div>
     </div>
