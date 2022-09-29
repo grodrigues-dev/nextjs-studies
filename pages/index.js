@@ -1,6 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import styles from '../styles/Home.module.scss'
 import Image from "next/image"
+import Link from "next/link";
 
 export default function Home() {
   const { data: session, status} = useSession();
@@ -32,7 +33,10 @@ export default function Home() {
             !session && status!='authenticated' && <p>*You are not authenticated</p>
             }
             {
-              session && <p>Welcome user :)</p>
+              session && 
+              <Link href='/pokemons'>
+               <a>Welcome user :)</a>
+              </Link>
             }
           </div>
         </section>
