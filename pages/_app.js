@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
   }
   
   return (
-    <SessionProvider>
+    <SessionProvider session={pageProps.session}>
     <ThemeProvider theme={theme}>
       <Head>
         <title>Jorginho's app</title>
